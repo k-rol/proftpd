@@ -9,11 +9,12 @@ You can provide your users list by mounting folder containing *users* files in /
 ```
 user password home_dir
 ```
+
+The `home_dir` can be a mounted volume from the host. This directory must be readable and writable by user 1000, gid 1000.
+
 ```
 docker run --name proftpd -d -p 21:21 -v /$PWD/examples/ftproot:/home_dir -v $PWD/examples/users:/users carolouellet/proftpd
 ```
-
-The `home_dir` can be a mounted volume from the host. This directory must be readable and writable by user 1000, gid 1000.
 
 ## Custom configuration
 
