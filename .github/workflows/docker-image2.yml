@@ -25,4 +25,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ github.repository }}:${{ steps.vars.outputs.tag }}
+          tags: carolouellet:${{ steps.vars.outputs.tag }}
