@@ -3,7 +3,8 @@ MAINTAINER Carol Ouellet <carol.ouellet@gmail.com>
 
 RUN apt-get update && apt-get install -y proftpd-basic
 
-RUN 'mkdir /users; cd users; touch userlist'
+RUN mkdir /users
+RUN cat /users/userlist
 
 ADD proftpd.conf /etc/proftpd/
 ADD entrypoint.sh /
