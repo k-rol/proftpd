@@ -20,7 +20,7 @@ docker run --name proftpd -d -p 21:21 -v /$PWD/example_userdir/ftproot:/home_dir
 
 Put your custom conf in `/etc/proftpd/conf.d`
 
-See example folders.
+See example_userdir folders.
 
 ## Active Mode
 
@@ -35,7 +35,7 @@ docker run --name proftpd -d -p 21:21 -v $PWD/example_userdir/users:/users carol
 In this mode, the container must publish port 50000 to 50050 (see proftpd.conf). Since docker use NAT to publish port, you have to tell to proftpd your host ip (or your public ip). An example is in `example_userdir/conf.d`. Mount the `conf.d` at `/etc/proftpd/conf.d` (see custom conf section bellow).
 
 ```
-docker run --name proftpd -d -p 21:21 -p 50000-50050:50000-50050 -v $PWD/exampexample_userdirles/conf.d:/etc/proftpd/conf.d -v $PWD/example_userdir/users:/users carolouellet/proftpd
+docker run --name proftpd -d -p 21:21 -p 50000-50050:50000-50050 -v $PWD/example_userdirles/conf.d:/etc/proftpd/conf.d -v $PWD/example_userdir/users:/users carolouellet/proftpd
 ```
 
 ## Custom Proftpd configuration
